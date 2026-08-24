@@ -59,12 +59,10 @@ void test_carrito_lleno(void) {
     Carrito c;
     carrito_init(&c);
     Producto p = {"Leche", 350, 1};
-
     carrito_agregar(&c, p);  /* 1er producto */
     carrito_agregar(&c, p);  /* 2do producto */
     carrito_agregar(&c, p);  /* 3er producto */
     carrito_agregar(&c, p);  /* 4to producto */
-
     int resultado = carrito_agregar(&c, p);  /* 5to: deberia fallar */
     ASSERT_IGUAL(0, resultado);
 }
