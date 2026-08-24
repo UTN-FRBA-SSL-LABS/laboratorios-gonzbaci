@@ -338,10 +338,10 @@ Las líneas con `#####` nunca se ejecutaron — no están cubiertas por los test
 
 **P10** — ¿Hay alguna línea de `carrito.c` con `#####`? ¿Cuál y por qué no se ejecutó?
 
-> R:
+> R:Si, las lineas 29 y 30. No se ejecutaron porque estoy corriendo make cobertura con test_unitarios.c únicamente, y ningún test unitario llama a carrito_descuento.
 
 ```
-COBERTURA_COMPLETA=
+COBERTURA_COMPLETA=NO
 ```
 _(SI si todas las líneas están cubiertas, NO si hay alguna con #####)_
 
@@ -351,27 +351,27 @@ _(SI si todas las líneas están cubiertas, NO si hay alguna con #####)_
 
 **P11** — ¿Qué diferencia hay entre un test unitario y uno de integración? ¿Cuál de los dos detectó primero el bug de `carrito_total`?
 
-> R:
+> R:El test unitario de la Parte 5 detectó primero el bug de carrito_total. Los unitarios prueban una función sola mientras que los de integración prueban varias combinadas.
 
 **P12** — El bug de capacidad en `carrito_agregar` causa un **buffer overflow**: se escribe más allá del array. ¿Por qué esto es peligroso en C pero no ocurriría en un lenguaje como Python o Java?
 
-> R:
+> R:En C no hay chequeo de límites de array: escribir fuera del array pisa memoria ajena y puede causar segfault o corrupción silenciosa. Python y Java sí chequean en runtime y lanzan una excepción antes de que eso pase.
 
 **P13** — En este laboratorio encontraste los bugs escribiendo tests. ¿Qué tiene de mejor este enfoque frente a mirar el código directamente?
 
-> R:
+> R:Leer el código no te obliga a decir qué resultado debería dar; escribir un test sí. Por eso el test detecta el bug aunque el código parezca correcto a simple vista.
 
 **P14** — El test `test_total_precio_unitario` (cantidad = 1) **pasó** a pesar del bug, mientras que `test_total_con_cantidad` (cantidad = 2) **falló**. ¿Por qué el primer test no detectó el bug?
 
-> R:
+> R:Con cantidad=1, sumar precio o precio*cantidad da lo mismo (350×1=350), así que el bug no se nota. Con cantidad=2 sí se nota (350 vs 700).
 
 ```
-BUG_EN_FUNCION_1=
+BUG_EN_FUNCION_1=carrito_total
 ```
 _(nombre de la función con el primer bug)_
 
 ```
-BUG_EN_FUNCION_2=
+BUG_EN_FUNCION_2=carrito_agregar
 ```
 _(nombre de la función con el segundo bug)_
 
