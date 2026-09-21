@@ -1,6 +1,6 @@
 # Laboratorio: Introducción a Bison
 
-**Nombre:** ___________________________
+**Nombre:** Gonzalo Bacigalupo
 
 ## Verificación y calificación
 
