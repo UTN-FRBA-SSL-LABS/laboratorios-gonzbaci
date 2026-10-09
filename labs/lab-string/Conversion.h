@@ -19,4 +19,9 @@ int ToInteger(const char *s);
 /* TODO: agregar una operacion a definir libremente.
  * Documentar Pre, Post y firma antes del prototipo. */
 
+/* IsEven: Integer -> Boolean
+ * Pre: ninguna
+ * Post: devuelve 1 si el entero es par, 0 si es impar */
+int IsEven(int n);
+
 #endif

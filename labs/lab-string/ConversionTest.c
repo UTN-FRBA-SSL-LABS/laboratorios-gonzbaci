@@ -18,6 +18,10 @@ int main(void) {
     assert(ToInteger("100") == 100);
 
     /* ── Operacion libre — agregar tests aca ────────────────────────────── */
+    assert(IsEven(0) == 1);
+    assert(IsEven(2) == 1);
+    assert(IsEven(7) == 0);
+    assert(IsEven(-4) == 1);
 
     return 0;
 }
